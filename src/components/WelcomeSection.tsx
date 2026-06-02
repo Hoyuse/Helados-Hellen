@@ -1,5 +1,6 @@
-const videoUrl = 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4';
-const qrUrl = `https://chart.googleapis.com/chart?cht=qr&chs=320x320&chl=${encodeURIComponent(videoUrl)}&choe=UTF-8`;
+const videoUrl = 'https://youtu.be/ysz5S6PUM-U';
+const videoEmbedUrl = 'https://www.youtube.com/embed/ysz5S6PUM-U?rel=0&modestbranding=1';
+const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(videoUrl)}`;
 
 export default function WelcomeSection() {
   return (
@@ -17,15 +18,14 @@ export default function WelcomeSection() {
             Escanea el QR y abre el video directamente en tu teléfono.
           </p>
 
-          <div className="overflow-hidden rounded-[2rem] border border-rose-100 shadow-2xl">
-            <video
-              controls
-              poster="https://images.unsplash.com/photo-1510626176961-4b34ee831ab8?auto=format&fit=crop&w=1200&q=80"
-              className="w-full h-full bg-black"
-            >
-              <source src={videoUrl} type="video/mp4" />
-              Tu navegador no soporta la reproducción de video.
-            </video>
+          <div className="overflow-hidden rounded-[2rem] border border-rose-100 shadow-2xl bg-black">
+            <iframe
+              title="Video de bienvenida Helados Hellen"
+              src={videoEmbedUrl}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full aspect-[16/9]"
+            />
           </div>
         </div>
 
@@ -36,7 +36,7 @@ export default function WelcomeSection() {
             </div>
             <h3 className="text-2xl font-bold text-neutral-dark">Abre el video en tu teléfono</h3>
             <p className="text-sm text-on-surface-variant leading-relaxed">
-              El código QR te lleva directamente al mismo video de bienvenida. Ideal para mostrarlo a tus clientes o compartirlo desde el celular.
+              El código QR te lleva directamente al video de bienvenida. Ideal para mostrarlo a tus clientes o compartirlo desde el celular.
             </p>
           </div>
 
