@@ -24,7 +24,7 @@ export default function WelcomeSection() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 5200);
+    }, 5000);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -37,34 +37,38 @@ export default function WelcomeSection() {
             Bienvenida
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-dark">
-            Carrusel de diapositivas de bienvenida
+            Bienvenida
           </h2>
           <p className="max-w-2xl text-on-surface-variant leading-relaxed text-base md:text-lg">
-            Descubre en pocos segundos la magia de Helados Hellen: sabores artesanales, entrega fría y una experiencia pensada para disfrutar.
-            Escanea el QR para ir directamente al sitio alojado.
+            Disfruta una presentación animada que muestra lo mejor de Helados Hellen. Escanea el QR para ir directamente al sitio alojado.
           </p>
 
           <div className="rounded-[2rem] border border-rose-100 bg-rose-50 p-8 shadow-2xl">
-            <div className="grid gap-4">
-              <div className="rounded-[1.75rem] bg-white p-8 shadow-lg border border-rose-100">
-                <p className="text-xs uppercase tracking-[0.28em] font-bold text-secondary">Diapositiva {activeSlide + 1} de {slides.length}</p>
-                <h3 className="mt-4 text-3xl font-black text-neutral-dark">{slides[activeSlide].title}</h3>
-                <p className="mt-4 text-base leading-relaxed text-on-surface-variant">{slides[activeSlide].description}</p>
-              </div>
-              <div className="flex items-center justify-between gap-3">
-                <button
-                  onClick={() => setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-                  className="inline-flex items-center justify-center w-full rounded-full border border-rose-200 bg-white px-5 py-3 text-sm font-semibold text-primary shadow-sm hover:bg-rose-50 transition-colors"
+            <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-8 shadow-lg border border-rose-100 min-h-[260px]">
+              {slides.map((slide, index) => (
+                <div
+                  key={slide.title}
+                  className={`absolute inset-0 transition-all duration-700 ease-out ${index === activeSlide ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'} ${index !== activeSlide ? 'pointer-events-none' : ''}`}
                 >
-                  ‹ Anterior
-                </button>
-                <button
-                  onClick={() => setActiveSlide((prev) => (prev + 1) % slides.length)}
-                  className="inline-flex items-center justify-center w-full rounded-full border border-rose-200 bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover transition-colors"
-                >
-                  Siguiente ›
-                </button>
-              </div>
+                  <p className="text-xs uppercase tracking-[0.28em] font-bold text-secondary">Bienvenida {index + 1} de {slides.length}</p>
+                  <h3 className="mt-4 text-3xl font-black text-neutral-dark">{slide.title}</h3>
+                  <p className="mt-4 text-base leading-relaxed text-on-surface-variant">{slide.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex items-center justify-between gap-3">
+              <button
+                onClick={() => setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+                className="inline-flex items-center justify-center w-full rounded-full border border-rose-200 bg-white px-5 py-3 text-sm font-semibold text-primary shadow-sm hover:bg-rose-50 transition-colors"
+              >
+                ‹ Anterior
+              </button>
+              <button
+                onClick={() => setActiveSlide((prev) => (prev + 1) % slides.length)}
+                className="inline-flex items-center justify-center w-full rounded-full border border-rose-200 bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary-hover transition-colors"
+              >
+                Siguiente ›
+              </button>
             </div>
           </div>
         </div>
