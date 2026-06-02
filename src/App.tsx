@@ -7,7 +7,7 @@ import Flavors from './components/Flavors';
 import CartDrawer from './components/CartDrawer';
 import CoverageMap from './components/CoverageMap';
 import CheckoutModal from './components/CheckoutModal';
-import MissionVisionModal from './components/MissionVisionModal';
+import MissionVisionPage from './components/MissionVisionPage';
 import ToastContainer, { ToastType } from './components/Toast';
 import Footer from './components/Footer';
 import { Product, CartItem } from './types';
@@ -105,17 +105,20 @@ export default function App() {
         onMissionClick={() => setIsMissionOpen(true)}
       />
 
-      <main>
-        {/* Intuitively designed view panels */}
-        <Hero />
-        <WelcomeSection />
-        
-        <HowItWorks />
-        
-        <Flavors onAddToCart={handleAddToCart} />
+      {isMissionOpen ? (
+        <MissionVisionPage onClose={() => setIsMissionOpen(false)} />
+      ) : (
+        <main>
+          {/* Intuitively designed view panels */}
+          <Hero />
+          <WelcomeSection />
+          
+          <HowItWorks />
+          
+          <Flavors onAddToCart={handleAddToCart} />
 
-        {/* Dynamic Coverage Sticky Panel strip based on layout instructions */}
-        <section className="w-full bg-secondary-container/95 py-10 px-6 md:px-10 text-center shadow-inner relative overflow-hidden select-none border-y border-emerald-100">
+          {/* Dynamic Coverage Sticky Panel strip based on layout instructions */}
+          <section className="w-full bg-secondary-container/95 py-10 px-6 md:px-10 text-center shadow-inner relative overflow-hidden select-none border-y border-emerald-100">
           <div className="absolute inset-0 opacity-15 pointer-events-none" 
             style={{
               backgroundImage: 'radial-gradient(#00210b 2px, transparent 2px)',
@@ -147,6 +150,7 @@ export default function App() {
         {/* Coverage Verification Map / Reviews section */}
         <CoverageMap />
       </main>
+      )}
 
       {/* Footer info panels */}
       <Footer />
@@ -170,11 +174,6 @@ export default function App() {
         cart={cart}
         onClearCart={handleClearCart}
         onAddToast={addToast}
-      />
-
-      <MissionVisionModal
-        isOpen={isMissionOpen}
-        onClose={() => setIsMissionOpen(false)}
       />
 
       {/* Universal notifications stack */}
