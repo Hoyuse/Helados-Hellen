@@ -59,15 +59,15 @@ export default function WelcomeSection() {
   return (
     <section className="bg-white/95 py-16 px-4 md:px-10">
       <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1.6fr_1fr] items-center">
-        <div className="space-y-6">
+        <div className="space-y-6 text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] shadow-sm">
             Bienvenida
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-dark">
             Bienvenida
           </h2>
-          <p className="max-w-2xl text-on-surface-variant leading-relaxed text-base md:text-lg">
-            Disfruta una presentación animada que muestra lo mejor de Helados Hellen. Escanea el QR para ir directamente al sitio alojado.
+          <p className="max-w-2xl mx-auto text-on-surface-variant leading-relaxed text-base md:text-lg lg:mx-0">
+            Disfruta una presentación animada que muestra lo mejor de Helados Hellen.
           </p>
 
           <div className="rounded-[2rem] border border-rose-100 bg-rose-50 p-8 shadow-2xl">
@@ -124,15 +124,12 @@ export default function WelcomeSection() {
           </div>
         </div>
 
-        <aside className="rounded-[2rem] border border-rose-100 bg-rose-50/90 p-8 shadow-2xl text-center">
+        <aside className="rounded-[2rem] border border-rose-100 bg-rose-50/90 p-8 shadow-2xl text-center flex flex-col items-center">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full bg-primary text-white px-4 py-2 text-xs font-bold uppercase tracking-[0.18em]">
               Escanea el QR
             </div>
             <h3 className="text-2xl font-bold text-neutral-dark">Ir al sitio alojado</h3>
-            <p className="text-sm text-on-surface-variant leading-relaxed">
-              El código QR te lleva directamente a la web en Vercel de Helados Hellen.
-            </p>
           </div>
 
           <div className="mx-auto mt-6 w-full max-w-xs rounded-[1.75rem] border border-white bg-white p-4 shadow-lg">
