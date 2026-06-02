@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import WelcomeSection from './components/WelcomeSection';
 import HowItWorks from './components/HowItWorks';
 import Flavors from './components/Flavors';
 import CartDrawer from './components/CartDrawer';
@@ -107,6 +108,7 @@ export default function App() {
       <main>
         {/* Intuitively designed view panels */}
         <Hero />
+        <WelcomeSection />
         
         <HowItWorks />
         
