@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #aa2e5e;
+  --color-primary-hover: #8e1f4a;
+  --color-primary-container: #fee9ec;
+  --color-[#f06595]: #f06595;
+  --color-secondary: #2f6a3f;
+  --color-secondary-container: #b2f2bb;
+  --color-accent: #f06595;
+  --color-background: #fff8f8;
+  --color-on-background: #24181b;
+  --color-on-surface-variant: #564146;
+  
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-default: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+.delicious-shadow {
+  box-shadow: 0 10px 30px -10px rgba(170, 46, 94, 0.12);
+}
+
+.delicious-shadow-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.delicious-shadow-hover:hover {
+  box-shadow: 0 20px 40px -15px rgba(170, 46, 94, 0.22);
+  transform: translateY(-4px);
+}
+
+.delicious-button-glow:hover {
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.3), 0 8px 20px -5px rgba(170, 46, 94, 0.3);
+}
+
+/* Hide scrollbars but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
