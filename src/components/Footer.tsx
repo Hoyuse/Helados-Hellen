@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contacto" className="bg-rose-50/20 border-t border-rose-100/40 relative overflow-hidden">
+    <footer className="bg-rose-50/20 border-t border-rose-100/40 relative overflow-hidden">
       
       {/* Decorative ice cream background blobs for consistency */}
       <div className="absolute right-0 bottom-0 w-64 h-64 bg-radial-gradient from-rose-100/25 to-transparent rounded-full pointer-events-none blur-3xl"></div>
@@ -69,6 +69,13 @@ export default function Footer() {
             <a href="#cobertura" className="hover:text-primary transition-colors">Cobertura Express</a>
             <a href="https://wa.me/573012436908" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Contacto Directo</a>
           </div>
+        </div>
+        <div className="mt-6 text-[11px] text-stone-500 leading-relaxed text-center md:text-left">
+          <a href="https://helados-hellen.vercel.app/" className="font-semibold text-primary hover:underline" target="_blank" rel="noreferrer">Helados Hellen</a> by <a href="https://github.com/Hoyuse" className="font-semibold text-primary hover:underline" target="_blank" rel="noreferrer">Hellen Durango</a> is marked <a href="https://creativecommons.org/publicdomain/zero/1.0/" className="font-semibold text-primary hover:underline" target="_blank" rel="noreferrer">CC0 1.0</a>
+          <span className="inline-flex items-center gap-2 ml-2">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style={{ maxWidth: '1em', maxHeight: '1em' }} />
+            <img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" alt="Zero" style={{ maxWidth: '1em', maxHeight: '1em' }} />
+          </span>
         </div>
       </div>
     </footer>

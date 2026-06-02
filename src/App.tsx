@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import WelcomeSection from './components/WelcomeSection';
 import HowItWorks from './components/HowItWorks';
+import ContactSection from './components/ContactSection';
 import Flavors from './components/Flavors';
 import CartDrawer from './components/CartDrawer';
 import CoverageMap from './components/CoverageMap';
@@ -149,6 +150,7 @@ export default function App() {
 
         {/* Coverage Verification Map / Reviews section */}
         <CoverageMap />
+        <ContactSection />
       </main>
       )}
 
