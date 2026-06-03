@@ -74,7 +74,6 @@ export default function WelcomeSection() {
             <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] font-bold text-secondary">Bienvenida</p>
-                <p className="mt-2 text-sm text-on-surface-variant">Simula un video con controles de reproducción y línea de tiempo.</p>
               </div>
               <button
                 onClick={() => setIsPlaying((prev) => !prev)}
