@@ -90,8 +90,7 @@ export default function WelcomeSection() {
                   className={`absolute inset-0 transition-all duration-700 ease-out ${index === activeSlide ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'} ${index !== activeSlide ? 'pointer-events-none' : ''}`}
                 >
                   <div className="flex h-full flex-col items-center justify-center text-center px-4 py-6 md:px-10">
-                    <p className="text-xs uppercase tracking-[0.28em] font-bold text-secondary">Bienvenida {index + 1} de {slides.length}</p>
-                    <h3 className="mt-4 text-3xl font-black text-neutral-dark">{slide.title}</h3>
+                    <h3 className="text-3xl font-black text-neutral-dark">{slide.title}</h3>
                     <p className="mt-4 text-base leading-relaxed text-on-surface-variant max-w-xl">
                       {slide.description}
                     </p>
