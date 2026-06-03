@@ -58,15 +58,15 @@ export default function WelcomeSection() {
 
   return (
     <section className="bg-white/95 py-16 px-4 md:px-10">
-      <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1.6fr_1fr] items-center">
-        <div className="space-y-6 text-center lg:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] shadow-sm">
+      <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-[1.6fr_1fr] items-center justify-center">
+        <div className="space-y-6 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] shadow-sm justify-center mx-auto">
             Bienvenida
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-dark">
             Bienvenida
           </h2>
-          <p className="max-w-2xl mx-auto text-on-surface-variant leading-relaxed text-base md:text-lg lg:mx-0">
+          <p className="max-w-2xl mx-auto text-on-surface-variant leading-relaxed text-base md:text-lg">
             Disfruta una presentación animada que muestra lo mejor de Helados Hellen.
           </p>
 
@@ -89,14 +89,18 @@ export default function WelcomeSection() {
                   key={slide.title}
                   className={`absolute inset-0 transition-all duration-700 ease-out ${index === activeSlide ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'} ${index !== activeSlide ? 'pointer-events-none' : ''}`}
                 >
-                  <p className="text-xs uppercase tracking-[0.28em] font-bold text-secondary">Bienvenida {index + 1} de {slides.length}</p>
-                  <h3 className="mt-4 text-3xl font-black text-neutral-dark">{slide.title}</h3>
-                  <p className="mt-4 text-base leading-relaxed text-on-surface-variant">{slide.description}</p>
+                  <div className="flex h-full flex-col items-center justify-center text-center px-4 py-6 md:px-10">
+                    <p className="text-xs uppercase tracking-[0.28em] font-bold text-secondary">Bienvenida {index + 1} de {slides.length}</p>
+                    <h3 className="mt-4 text-3xl font-black text-neutral-dark">{slide.title}</h3>
+                    <p className="mt-4 text-base leading-relaxed text-on-surface-variant max-w-xl">
+                      {slide.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
             <div className="mt-5 space-y-3">
-              <div className="flex items-center justify-between text-xs text-stone-500">
+              <div className="flex flex-col items-center gap-2 text-xs text-stone-500 md:flex-row md:justify-between">
                 <span>{isPlaying ? 'Reproduciendo' : 'Pausado'}</span>
                 <span>{`00:${Math.floor((progress / 100) * 5).toString().padStart(2, '0')} / 00:05`}</span>
               </div>
@@ -106,7 +110,7 @@ export default function WelcomeSection() {
                   style={{ width: `${progress}%` }}
                 ></div>
               </div>
-              <div className="flex items-center justify-between gap-3">
+              <div className="flex flex-col gap-3 md:flex-row">
                 <button
                   onClick={handlePrevious}
                   className="inline-flex items-center justify-center w-full rounded-full border border-rose-200 bg-white px-5 py-3 text-sm font-semibold text-primary shadow-sm hover:bg-rose-50 transition-colors"
